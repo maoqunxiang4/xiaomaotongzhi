@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.Mapper.UserMapper">
+
+  <select id="searchuser" parameterType="map" resultType="u">
+    select * from register.imformation where usernumber=#{number} and pwd=#{pwd}
+  </select>
+
+  <select id="regist" parameterType="String" resultType="u">
+    select * from imformation where usernumber=#{usernumber};
+  </select>
+
+  <insert id="adduser" parameterType="u">
+    insert into imformation(usernumber,pwd,work) values (#{usernumber},#{pwd},#{work})
+  </insert>
+</mapper>
